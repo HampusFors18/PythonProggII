@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-Exemple code in module 1
+Exemple code in module 1 test
 
 """
 import random   
