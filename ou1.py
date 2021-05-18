@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Exemple code in module 1
 
