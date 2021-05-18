@@ -2,6 +2,7 @@
 """
 Exemple code in module 1 test
 
+small git testing
 """
 import random   
 import time
@@ -274,7 +275,7 @@ def main():
     print(f"exchange(100, [1, 5, 10, 50, 100]) = {exchange(100, [1, 5, 10, 50, 100])}")
     
     tstart = time.perf_counter ()
-    print(f"fib(42) = {fib(42)}")
+    print(f"fib(30) = {fib(30)}")
     tstop = time.perf_counter ()
     print(f"Measured  time: {tstop -tstart} seconds")
 
