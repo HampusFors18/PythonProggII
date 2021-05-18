@@ -293,7 +293,7 @@ def main():
     print('----------------------------')
     
     
-    n = 10000000
+    n = 10000
     randTree = random_tree(n)
     #randTree.print()
     print()
