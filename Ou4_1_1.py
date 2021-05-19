@@ -23,10 +23,13 @@ def estimate_PI_MC(n):
         
     print(f'Number of points inside the circle: {points_in_circle}')
     
+    pi_estimate = 4*points_in_circle/n
+    print(f'Estimate of pi with {n} points: {pi_estimate}')
+    
     
 
 def main():
-    estimate_PI_MC(100)
+    estimate_PI_MC(1000)
     
 
 if __name__ == "__main__":
