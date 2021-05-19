@@ -38,14 +38,22 @@ def estimate_PI_MC(n):
     print(f'Estimate of PI with {n} points: {pi_estimate}')
     print(f'"Real" vale of PI: {math.pi}')
     
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+        
     plt.plot(x_points_inside, y_points_inside, 'ro')
     plt.plot(x_points_outside, y_points_outside, 'bo')
-    plt.axis([-1,1,-1,1])
+    plt.xlim(-1,1)
+    plt.ylim(-1,1)
+    
+    ax.set_aspect('equal', adjustable='box')
+    plt.show()
+    #plt.savefig('pythonOU4Plot.png')
     
     
 
 def main():
-    estimate_PI_MC(10)
+    estimate_PI_MC(1000)
     
 
 if __name__ == "__main__":
