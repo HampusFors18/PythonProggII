@@ -47,8 +47,8 @@ def estimate_PI_MC(n):
     plt.ylim(-1,1)
     
     ax.set_aspect('equal', adjustable='box')
-    plt.show()
-    #plt.savefig('pythonOU4Plot.png')
+    #plt.show()
+    plt.savefig('pythonOU4PlotSquare.png')
     
     
 
