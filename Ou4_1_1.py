@@ -36,7 +36,7 @@ def estimate_PI_MC(n):
     
     pi_estimate = 4*no_points_in_circle/n
     print(f'Estimate of PI with {n} points: {pi_estimate}')
-    print(f'"Real" vale of PI: {math.pi}')
+    print(f'"Real" value of PI: {math.pi}')
     
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -47,13 +47,13 @@ def estimate_PI_MC(n):
     plt.ylim(-1,1)
     
     ax.set_aspect('equal', adjustable='box')
-    #plt.show()
-    plt.savefig('pythonOU4PlotSquare.png')
+    plt.show()
+    #plt.savefig('pythonOU4PlotSquare.png')
     
     
 
 def main():
-    estimate_PI_MC(1000)
+    estimate_PI_MC(100)
     
 
 if __name__ == "__main__":
