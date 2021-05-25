@@ -1,8 +1,8 @@
 """ linked_list.py
 
-Student:
-Mail:
-Reviewed by:
+Student: Hampus
+Mail: studentmail
+Reviewed by: 
 Date reviewed:
 """
 
@@ -170,7 +170,9 @@ class LinkedList:
     
     
     def merge(self, lst):         # Compulsory
-        
+        for node in lst:
+            self.insert(node)
+    """
         f = self.first
         g = lst.first
         temp = None
@@ -202,7 +204,7 @@ class LinkedList:
             if g is None:
                 temp.succ = f
         return new_succ
-                
+                """
                 
             
     def __getitem__(self, ind):   # Compulsory

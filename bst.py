@@ -3,8 +3,8 @@
 
 Student: Hampus Naumanen
 Mail:
-Reviewed by:
-Date reviewed:
+Reviewed by: Bruse
+Date reviewed: 24/5
 """
 
 
@@ -132,7 +132,7 @@ class BST:
                     min_key = temp_key.key                  #store their values in min_key. Loop wont continue if nothing to the left
         
                 
-                r.key = min_key                             #copy value of the smallest node to the node that is to be replaced
+                r.key = min_key                           #copy value of the smallest node to the node that is to be replaced
                 r.right = self._remove(r.right, min_key)   #remove that node. That node is the smallest of the right subtree but still bigger than the node to be replaced
             
             
@@ -319,10 +319,15 @@ What is the generator good for?
 ==============================
 
 1. computing size?
+yes you can compute size by iterating the tree
 2. computing height?
+du kan inte beräkna höjden av trädet med generatorn då storleksordningen av elementet inte säger något om var den ligger
 3. contains?
+yau can find elements in tree using the generator by comparing each value
 4. insert?
+generatorn säger inget om strukturen
 5. remove?
+strukturen skulle kunna förstöras om man bara tog bort ett värde man hittar
 
 
 
