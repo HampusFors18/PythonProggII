@@ -10,8 +10,12 @@ EMAIL = ''  # Enter your contact email address
 def total_list_sum(l):
     """Recursively calculate the total sum of integers
     in the list given and return the sum."""
-
-    pass  # Remove the pass statement and enter your code here
+    
+    if len(l) < 1:
+        return 0
+    else: 
+        return l[0] + total_list_sum(l[1:])
+    
 
 
 """***************
@@ -23,7 +27,11 @@ def largest_tuple(t):
     """Recursively find the largest tuple in a set
     of tuples and return it."""
 
-    pass  # Remove the pass statement and enter your code here
+    if len(t) == 1:
+        return t[0]
+    else:
+        l = largest_tuple(t[1:])
+        return l if total_list_sum(l) > total_list_sum(t[0]) else t[0]
 
 
 """***************
@@ -166,7 +174,10 @@ def infinite_tens():
        ad infinitum. When invoking the Python next() method on it,
        the first number should be 1, then 10, then 100 etc."""
 
-    pass  # Remove the pass statement and enter your code here
+    n = 1
+    while True:
+        yield n
+        n *= 10
 
 
 """****************
@@ -188,8 +199,16 @@ def get_age(index):
 def get_average_age(indexes):
     """Run the get_age in parallel (concurrently) for each of the indexes given.
     Then return the average age of the given results from get_age."""
-
-    pass  # Remove the pass statement and enter your code here
+    from concurrent import futures as f
+    
+    age_list = []
+    with f.ThreadPoolExecutor() as ex:
+        results = ex.map(get_age, indexes)
+        for a in results:
+            age_list.append(a)
+    return sum(age_list)/len(age_list)
+        
+        
 
 
 """***************

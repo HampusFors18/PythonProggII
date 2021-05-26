@@ -76,8 +76,13 @@ class BST:
     def size(self):
         """This method should return the number of items
            the tree contains"""
-
-        pass  # Remove the pass statement and enter your code here
+        n = 0
+        for x in self:
+            n += 1
+        return n
+       
+        
+        
 
     """***************
        *** TASK A7 ***
@@ -92,7 +97,13 @@ class BST:
     def _height(self, t):
         """This method should calculate the height of the tree."""
 
-        pass  # Remove the pass statement and enter your code here
+        if t is None:
+            return 0
+        else:
+            left_height = self._height(t.left)
+            right_height = self._height(t.right)
+            return max(left_height, right_height) + 1
+        
 
     """***************
        *** TASK A8 ***
@@ -100,6 +111,12 @@ class BST:
 
     """Define the two dunder methods for greater than and less than here.
        Make use of the height method to determine which tree is larger/smaller"""
+       
+    def __gt__(self, other):
+        return self.height() > other.height()
+    
+    def __lt__(self, other):
+        return self.height() < other.height()
 
     """***************
        *** TASK B4 ***

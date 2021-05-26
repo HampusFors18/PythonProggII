@@ -2,7 +2,7 @@
 
 
 Student: Hampus Naumanen
-Mail:
+Mail: Hampus.naumanen.94@hotmail.com
 Reviewed by: Bruse
 Date reviewed: 24/5
 """
@@ -57,6 +57,7 @@ class BST:
         self._print(self.root)
     
     def _print(self, r):
+        """Method that prints out the elements of the BST"""
         if r:
             self._print(r.left)
             print(r.key, end=' ')
@@ -87,6 +88,7 @@ class BST:
 #
 
     def height(self):                             # Compulsory
+        """Method that returns the height of the BST"""
         if self.root != None:
             return self._height(self.root, 0)
         else:
@@ -103,7 +105,8 @@ class BST:
         
 
     
-    def remove(self, key):                           
+    def remove(self, key):
+        """Method that removes a key from the BST and returns the new tree"""                           
         self.root = self._remove(self.root, key)
     
     def _remove(self, r, k):                            # Compulsory
@@ -153,6 +156,7 @@ class BST:
 
     
     def __str__(self):                            # Compulsory
+        """String method that represents the elements of the BST inorder"""
         count = 0
         result = '<'
         for node in BST.__iter__(self):
@@ -167,6 +171,7 @@ class BST:
     
     
     def to_list(self):                            # Compulsory
+        """Method that returns the elements in the BST as a list"""
         bst_list = []
         for node in BST.__iter__(self):
             bst_list.append(node)
@@ -174,6 +179,7 @@ class BST:
     
     
     def to_LinkedList(self):                      # Compulsory
+        """Method that returns the elements in the BST as a linked list"""
         lst = LinkedList()
         for node in BST.__iter__(self):
             lst.insert(node)
@@ -181,6 +187,7 @@ class BST:
         
     
     def ipl(self):                                # Compulsory
+        """Method that computes the internal path lenght of the BST"""
         return self._ipl(self.root, 1)
     
     def _ipl(self, r, level):
@@ -200,6 +207,7 @@ class BST:
     
     
 def random_tree(n):                               # Useful
+    """Method that initiates a BST with random values"""
     rand_tree = BST()
     count = 0
     while count < n:

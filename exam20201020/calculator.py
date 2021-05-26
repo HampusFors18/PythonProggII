@@ -103,6 +103,14 @@ def term(wtok):
 
 
 def factor(wtok):
+    if wtok.get_current() == '|':
+        wtok.next()
+        result = assignment(wtok)
+        if wtok.get_current() != '|':
+            raise SyntaxException("Expected '|'")
+        else:
+            wtok.next()
+            return abs(result)
     if wtok.get_current() == '(':
         wtok.next()
         result = assignment(wtok)

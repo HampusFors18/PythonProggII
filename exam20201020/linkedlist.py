@@ -40,7 +40,10 @@ class ListSet:
                the main ListSet class. This method should find the value
                at the index number given recursively and return it."""
 
-            pass  # Remove the pass statement and enter your code here
+            if index == 0:
+                return self.key
+            else:
+                return self.next.at_index(index-1)
 
     def __init__(self):
         self.first = None
@@ -78,8 +81,13 @@ class ListSet:
     def size(self):
         """This method should return the number of items
            the linked list contains"""
-
-        pass  # Remove the pass statement and enter your code here
+        list_size = 0
+        f = self.first
+        while f:
+            list_size += 1
+            f = f.next
+        return list_size
+        
 
     """***************
        *** TASK A5 ***
