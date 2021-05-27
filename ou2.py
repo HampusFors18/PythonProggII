@@ -1,7 +1,7 @@
 """
 Solutions to module 2 - A calculator
 Student: Hampus Naumanen
-Mail: studentmail
+Mail: hampus.naumanen.94@hotmail.com
 Reviewed by: Bruse
 Reviewed date: 24/5
 """
