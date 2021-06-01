@@ -6,8 +6,10 @@ class Heltal{
 		Heltal(int);
 		int get();
 		void set(int);
+		int fib();
 	private:
 		int val;
+		int fibonacci(int)
 	};
  
 Heltal::Heltal(int n){
@@ -21,7 +23,13 @@ int Heltal::get(){
 void Heltal::set(int n){
 	val = n;
 	}
-	
+
+int Heltal::fib(int n) {
+	if (n <= 1){
+		return n;
+		}
+	return fib(n-1) + fib(n-2)
+	}
 
 extern "C"{
 	Heltal* Heltal_new(int n) {return new Heltal(n);}
@@ -33,4 +41,5 @@ extern "C"{
 			heltal = nullptr;
 			}
 		}
+	int Heltal_fib(Heltal* heltal, int n) {return heltal->fib(n);}
 	}
