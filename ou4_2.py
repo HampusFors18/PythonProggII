@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from heltal import Heltal
+from heltal import fib_py
 
 def main():
 	f = Heltal(5)
