@@ -2,9 +2,9 @@
 
 
 Student: Hampus Naumanen
-Mail:
-Reviewed by:
-Date reviewed:
+Mail: Hampus.naumanen.94@hotmail.com
+Reviewed by: Bruse
+Date reviewed: 24/5
 """
 
 
@@ -57,6 +57,7 @@ class BST:
         self._print(self.root)
     
     def _print(self, r):
+        """Method that prints out the elements of the BST"""
         if r:
             self._print(r.left)
             print(r.key, end=' ')
@@ -87,6 +88,7 @@ class BST:
 #
 
     def height(self):                             # Compulsory
+        """Method that returns the height of the BST"""
         if self.root != None:
             return self._height(self.root, 0)
         else:
@@ -103,7 +105,8 @@ class BST:
         
 
     
-    def remove(self, key):                           
+    def remove(self, key):
+        """Method that removes a key from the BST and returns the new tree"""                           
         self.root = self._remove(self.root, key)
     
     def _remove(self, r, k):                            # Compulsory
@@ -132,7 +135,7 @@ class BST:
                     min_key = temp_key.key                  #store their values in min_key. Loop wont continue if nothing to the left
         
                 
-                r.key = min_key                             #copy value of the smallest node to the node that is to be replaced
+                r.key = min_key                           #copy value of the smallest node to the node that is to be replaced
                 r.right = self._remove(r.right, min_key)   #remove that node. That node is the smallest of the right subtree but still bigger than the node to be replaced
             
             
@@ -153,6 +156,7 @@ class BST:
 
     
     def __str__(self):                            # Compulsory
+        """String method that represents the elements of the BST inorder"""
         count = 0
         result = '<'
         for node in BST.__iter__(self):
@@ -167,6 +171,7 @@ class BST:
     
     
     def to_list(self):                            # Compulsory
+        """Method that returns the elements in the BST as a list"""
         bst_list = []
         for node in BST.__iter__(self):
             bst_list.append(node)
@@ -174,6 +179,7 @@ class BST:
     
     
     def to_LinkedList(self):                      # Compulsory
+        """Method that returns the elements in the BST as a linked list"""
         lst = LinkedList()
         for node in BST.__iter__(self):
             lst.insert(node)
@@ -181,6 +187,7 @@ class BST:
         
     
     def ipl(self):                                # Compulsory
+        """Method that computes the internal path lenght of the BST"""
         return self._ipl(self.root, 1)
     
     def _ipl(self, r, level):
@@ -200,6 +207,7 @@ class BST:
     
     
 def random_tree(n):                               # Useful
+    """Method that initiates a BST with random values"""
     rand_tree = BST()
     count = 0
     while count < n:
@@ -319,10 +327,15 @@ What is the generator good for?
 ==============================
 
 1. computing size?
+yes you can compute size by iterating the tree
 2. computing height?
+du kan inte beräkna höjden av trädet med generatorn då storleksordningen av elementet inte säger något om var den ligger
 3. contains?
+yau can find elements in tree using the generator by comparing each value
 4. insert?
+generatorn säger inget om strukturen
 5. remove?
+strukturen skulle kunna förstöras om man bara tog bort ett värde man hittar
 
 
 

@@ -1,9 +1,9 @@
 """ linked_list.py
 
-Student:
-Mail:
-Reviewed by:
-Date reviewed:
+Student: Hampus
+Mail: Hampus.naumanne.94@hotmail.com
+Reviewed by: Bruse
+Date reviewed: 24/5
 """
 
 class LinkedList:
@@ -55,6 +55,7 @@ class LinkedList:
     # To be implemented
     
     def length(self):             # Optional
+        """Method that determines and returns the length of the linked list"""
         list_length = 0
         f = self.first
         while f:                    #if f contains element
@@ -65,6 +66,7 @@ class LinkedList:
   
   
     def mean(self):               # Optional
+        """Method that copmutes the mean of all elements in the linked list and returns the mean"""
         list_sum = 0
         f = self.first
         while f:
@@ -74,6 +76,7 @@ class LinkedList:
     
     
     def remove_last(self):        # Optional
+        """Method that removes the last element of the list and returns that element"""
         temp = None
         if self.first is None:
             return None                       #return None if no element in list
@@ -92,6 +95,8 @@ class LinkedList:
     
     
     def remove(self, x):          # Compulsory
+        """Method that removes a specific element x and returns true
+        if it is removed and returns false if it is not in the list"""
         f = self.first
         
         if f is not None:
@@ -116,6 +121,7 @@ class LinkedList:
     
     
     def count(self, x):           # Optional
+        """Method that counts the number of elements in the linked list"""
         return self._count(x, self.first)
      
     def _count(self, x, f):
@@ -129,6 +135,7 @@ class LinkedList:
     
     
     def to_list(self):            # Compulsory
+        """Method that transform the linked list into a ordinary list"""
         return self._to_list(self.first)
     
     def _to_list(self, f):
@@ -140,6 +147,7 @@ class LinkedList:
     
     
     def remove_all(self, x):      # Compulsory
+        """Method that removes all elements of x and returns the new linked list"""
         self.first = self._remove_all(x, self.first)
     
     def _remove_all(self, x, f):
@@ -156,6 +164,7 @@ class LinkedList:
     
     
     def __str__(self):            # Compulsary
+        """String method of the linked list"""
         result = '('
         f = self.first
         if f is not None:
@@ -170,42 +179,14 @@ class LinkedList:
     
     
     def merge(self, lst):         # Compulsory
-        
-        f = self.first
-        g = lst.first
-        temp = None
-        
-        if f is None:
-            return g
-        if g is None:
-            return f
-        if f and g:
-            if f.data <= g.data:            #setting first temp node to lowest value
-                temp = f                    #Point temp node to f
-                f = f.succ                  #Update f pointer
-            else:
-                temp = g
-                g = g.succ
-            new_succ = temp                  #This is going to be new head
-            
-            while f and g:                  #
-                if f.data <= g.data:
-                    temp.succ = f           #Update pointer of temp
-                    temp = f                #Move temp node
-                    f = temp.succ           #Update pointer of f
-                else:
-                    temp.succ = g
-                    temp = g
-                    g = temp.succ
-            if f is None:
-                temp.succ = g
-            if g is None:
-                temp.succ = f
-        return new_succ
-                
+        """Method that merges two linked lists"""
+        for node in lst:
+            self.insert(node)
+    
                 
             
     def __getitem__(self, ind):   # Compulsory
+        """Method that returns a element of a specific index"""
         if ind > self.length():
             return "Index out of range"
         f = self.first
@@ -215,6 +196,7 @@ class LinkedList:
 
 
 class Person:                     # Compulsory to complete
+    """Constructor of a person class with personal number and name"""
     def __init__(self, name, pnr):
         self.name = name
         self.pnr = pnr

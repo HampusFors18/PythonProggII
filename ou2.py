@@ -1,9 +1,9 @@
 """
 Solutions to module 2 - A calculator
 Student: Hampus Naumanen
-Mail: 
-Reviewed by:
-Reviewed date:
+Mail: hampus.naumanen.94@hotmail.com
+Reviewed by: Bruse
+Reviewed date: 24/5
 """
 
 
@@ -154,7 +154,7 @@ def arglist(wtok):
     
 def assignment(wtok):
     '''
-    
+    -----Beskrivning-----
 
     Parameters
     ----------
@@ -357,7 +357,7 @@ def main():
             elif wtok.get_current() == 'vars':
                 print(dict_variables)
             elif wtok.get_current() == 'file':
-                calcTestFile = "test4.txt"
+                calcTestFile = "test1.txt"
                 list_of_lines_from_file = readFromFile(calcTestFile)
             else:
                 result = assignment(wtok)       #Update ans
