@@ -79,7 +79,7 @@ class EvaluationException(Exception):
 
 
 functions = {'sin': math.sin, 'cos': math.cos,
-             'exp': math.exp, 'log': math.log}
+             'exp': math.exp, 'log': math.log, 'int': int}
 
 
 def assignment(wtok):
@@ -138,7 +138,21 @@ def factor(wtok):
     else:
         raise SyntaxException(
             "Expected number, function name, '-' or '('")
+    if wtok.get_current() == '!':
+        wtok.next()
+        result = factorial(result)
     return result
+
+
+def factorial(n):
+    
+    if n < 0 or not n.is_integer():
+        raise EvaluationException(f"Illegal argument to factorial: {n}")
+    else:
+        if n==0:
+            return 1
+        else:
+            return n*factorial(n-1)
 
 
 

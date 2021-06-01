@@ -34,7 +34,10 @@ class Queue:
     def enqueue(self, data):
         """Add item to the list"""
 
-        pass  # Remove the pass statement and enter your code here
+        if self.first is None:
+            self.first = self.last = Queue.Qnode(data)
+        else:
+            self.last.next = self.last = Queue.Qnode(data)
 
     """***************
        *** TASK A4 ***
@@ -42,8 +45,12 @@ class Queue:
 
     def dequeue(self):
         """Remove item from the list and return it"""
-
-        pass  # Remove the pass statement and enter your code here
+        if self.first is None:
+            return None
+        else:
+            result = self.first.data
+            self.first = self.first.next
+        return result
 
     """***************
        *** TASK A5 ***
@@ -51,7 +58,22 @@ class Queue:
 
     # Remove this and implement the operator overload (+)
 
-    """***"""
+    def __add__(self, other):
+        
+        q = Queue()
+        
+        x = self.first
+        while x:
+            q.enqueue(x)
+            x = x.next
+            
+        y = other.first
+        while y:
+            q.enqueue(y)
+            y = y.next
+        
+        return q
+        
 
 
 if __name__ == '__main__':

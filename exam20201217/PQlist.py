@@ -75,7 +75,18 @@ class PQlist:
            defined in the node class, use
            it if you need it."""
 
-        pass  # Remove the pass statement and enter your code here
+        if self.first is None:
+            return None
+        else:
+            f = self.first
+            min_value = self.first.data
+            while f:
+                if f.data < min_value:
+                    min_value = f.data
+                    f = f.next
+                else:
+                    f = f.next
+            return min_value
 
 
     """***************

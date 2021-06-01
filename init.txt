@@ -1,0 +1,19 @@
+(2+4=x) - x                     # 0.0
+2*(3*x + 2)/(16-x)              # 4.0
+
+#### Test of division by zero. Should cause EvaluationErrors
+1/0
+(2+5)/(6 - 3*2)
+
+
+#### Test of assignment lists
+1,2,3
+3=x, 2+x=y                      # 5.0
+(1,2,3) + (2,3,4)               # 7.0
+(2,3)*(4,6)                     # 18.0
+2=x, 3=y, 5, 4*x+y = z          # 11.0
+(2=b, 3=c, 4=d) + 5 = a, 2*a    # 18.0
+(5=b,8=c)*(4=d,5=d)+5 = a, 2*a  # 90.0
+#
+
+
