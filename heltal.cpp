@@ -23,11 +23,11 @@ void Heltal::set(int n){
 	val = n;
 	}
 
-int Heltal::fib(int n {
+int Heltal::fib(int n) {
 	if (n <= 1){
 		return n;
 		}
-	return fib(n-1) + fib(n-2)
+	return fib(n-1) + fib(n-2);
 	}
 
 extern "C"{
