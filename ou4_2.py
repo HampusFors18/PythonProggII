@@ -9,6 +9,8 @@ def main():
 	f.set(7)
 	print(f.get())
 	print()
+	f.set(10)
+	print(f.get())
 	#fib10 =  fib_py(Heltal(10))
 	#print(fib10)
 	print("Testing fibonacci method: computing 10th value")
