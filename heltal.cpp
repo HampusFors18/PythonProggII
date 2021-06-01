@@ -23,7 +23,7 @@ void Heltal::set(int n){
 	val = n;
 	}
 
-int Heltal::fib(int n) {
+int Heltal::fib(int n {
 	if (n <= 1){
 		return n;
 		}
