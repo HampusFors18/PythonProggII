@@ -51,9 +51,9 @@ def main():
 
 
     #fig = plt.figure()
-    plt.plot([range(30,37)], [time_c_list], 'ro')
-    plt.plot([range(30,37)], [time_py_list], 'bo')
-    plt.axis([30, 37, 0, 100])
+    plt.plot([range(30,46)], [time_c_list], 'ro')
+    plt.plot([range(30,46)], [time_py_list], 'bo')
+    plt.axis([30, 46, 0, 100])
     plt.savefig('testfibplot.png')
     
 
