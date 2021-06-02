@@ -32,7 +32,7 @@ def main():
     print("Elapsed time for C++ solving fibonacci: ", t2_stop-t2_start)
     
     
-    for i in range(30,42):
+    for i in range(30,37):
         f.set(i)
         tC_start = perf_counter()
         f.fib()
@@ -40,12 +40,20 @@ def main():
         time = tC_stop-tC_start
         time_c_list.append(time)
         
+    for i in range(30,37):
+        tpy_start = perf_counter()
+        fib_py(i)
+        tpy_stop = perf_counter()
+        time = tpy_stop-tpy_start
+        time_py_list.append(time)
+        
         
 
 
-    fig = plt.figure()
-    plt.plot(range(30,46), time_c_list)
-    plt.axis([0, 6, 0, 20])
+    #fig = plt.figure()
+    plt.plot([range(30,37)], [time_c_list], 'ro')
+    plt.plot([range(30,37)], [time_py_list], 'bo')
+    plt.axis([30, 37, 0, 30])
     plt.savefig('testfibplot.png')
     
 
