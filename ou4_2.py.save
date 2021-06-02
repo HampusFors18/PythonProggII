@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 from heltal import Heltal
@@ -8,7 +7,7 @@ def main():
 	f = Heltal(5)
 	print(f.get())
 	f.set(7)
-	print(f.get())
+	print(f.get()
 	f.set(10)
 	print(f.get())
 	print("Testing fibonacci method with C++: computing 10th value")
