@@ -45,7 +45,7 @@ def main():
 
     fig = plt.figure()
     plt.plot(range(30,46), time_c_list)
-    plt.axis([0,45, 0, 10^8])
+    plt.axis([0, 6, 0, 20])
     plt.savefig('testfibplot.png')
     
 
