@@ -20,6 +20,7 @@ def main():
     f.set(35)
     print(f.get())
     print("Testing fibonacci method with C++: computing 35th value")
+    print('Fibonacci value:')
     t1_start = perf_counter()
     print(f.fib())
     t1_stop = perf_counter()
@@ -29,6 +30,7 @@ def main():
     print()
     print()
     print("Testing fibonacci method(python): computing 35th value")
+    print('Fibonacci value:')
     t2_start = perf_counter()
     print(fib_py(35))
     t2_stop = perf_counter()
@@ -55,15 +57,14 @@ def main():
 
 
     #fig = plt.figure()
-    plt.plot([range(30,40)], [time_c_list], 'ro')
-    plt.plot([range(30,40)], [time_py_list], 'bo')
+    linec, = plt.plot([range(30,40)], [time_c_list], 'ro')
+    linec_legend = plt.legend(handles=[linec], loc='upper right')
+    linepy, = plt.plot([range(30,40)], [time_py_list], 'bo')
+    linepy_legend = plt.legend(handles=[linepy], loc='upper left')
     plt.axis([30, 40, 0, 100])
+    plt.gca().add_artist(linec_legend)
+    plt.gca().add_artist(linepy_legend)
     plt.savefig('testfibplot.png')
-    
-    red_patch = mpatches.Patch(color='red', label='The red data')
-    plt.legend(handles=[red_patch])
-    #blue_patch = mpatches.Patch(color='blue', label='The blue data')
-    #plt.legend(handles=[blue_patch])
     
 
 if __name__ == '__main__':
