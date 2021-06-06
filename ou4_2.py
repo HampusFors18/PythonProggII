@@ -5,6 +5,7 @@ from heltal import Heltal
 from heltal import fib_py
 from time import perf_counter
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 
 
 
@@ -24,12 +25,15 @@ def main():
     t1_stop = perf_counter()
     print()
     print("Elapsed time for C++ solving fibonacci: ", t1_stop-t1_start)
+    print()
+    print()
+    print()
     print("Testing fibonacci method(python): computing 35th value")
     t2_start = perf_counter()
     print(fib_py(35))
     t2_stop = perf_counter()
     print()
-    print("Elapsed time for C++ solving fibonacci: ", t2_stop-t2_start)
+    print("Elapsed time for python solving fibonacci: ", t2_stop-t2_start)
     
     
     for i in range(30,40):
@@ -55,6 +59,11 @@ def main():
     plt.plot([range(30,40)], [time_py_list], 'bo')
     plt.axis([30, 40, 0, 100])
     plt.savefig('testfibplot.png')
+    
+    red_patch = mpatches.Patch(color='red', label='The red data')
+    plt.legend(handles=[red_patch])
+    #blue_patch = mpatches.Patch(color='blue', label='The blue data')
+    #plt.legend(handles=[blue_patch])
     
 
 if __name__ == '__main__':
