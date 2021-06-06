@@ -53,7 +53,7 @@ def estimate_PI_MC(n):
     
 
 def main():
-    estimate_PI_MC(100)
+    estimate_PI_MC(1000)
     
 
 if __name__ == "__main__":
