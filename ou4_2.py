@@ -57,13 +57,15 @@ def main():
 
 
     #fig = plt.figure()
-    linec, = plt.plot([range(30,40)], [time_c_list], 'ro')
-    linec_legend = plt.legend(handles=[linec], loc='upper right')
-    linepy, = plt.plot([range(30,40)], [time_py_list], 'bo')
-    linepy_legend = plt.legend(handles=[linepy], loc='upper left')
+    plt.plot([range(30,40)], [time_c_list], 'ro')
+    #linec, = plt.plot([range(30,40)], [time_c_list], 'ro')
+    #linec_legend = plt.legend(handles=[linec], loc='upper right')
+    plt.plot([range(30,40)], [time_py_list], 'bo')
+    #linepy, = plt.plot([range(30,40)], [time_py_list], 'bo')
+    #linepy_legend = plt.legend(handles=[linepy], loc='upper left')
     plt.axis([30, 40, 0, 100])
-    plt.gca().add_artist(linec_legend)
-    plt.gca().add_artist(linepy_legend)
+    #plt.gca().add_artist(linec_legend)
+    #plt.gca().add_artist(linepy_legend)
     plt.savefig('testfibplot.png')
     
 
