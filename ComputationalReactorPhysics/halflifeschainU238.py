@@ -29,10 +29,11 @@ lamRn222HL = np.log(2)/Rn222HL
 
 N0=5000000
 Tstart=0.0
-Tend=15 #kyears
+Tend=1500 #kyears
 Neval=50
 T_eval=np.linspace(Tstart,Tend, Neval)
-sol=solve_ivp(derivDaughter,(Tstart,Tend),[N0,0.0, 0.0, 0.0],t_eval=T_eval,args=(lamU234HL, lamTh230HL, lamRa226HL, lamRn222HL))
+sol=solve_ivp(derivDaughter,(Tstart,Tend),[N0,0.0, 0.0, 0.0], method='BDF', t_eval=T_eval,args=(lamU234HL, lamTh230HL, lamRa226HL, lamRn222HL))
+
 
 plt.figure()
 plt.plot(sol.t,sol.y[0],label='U-234')
