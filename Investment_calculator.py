@@ -50,6 +50,7 @@ list_table[0].append('Skatt')
 list_table[0].append('Värde vid årets slut')
 #print('--------------------')
 #print(list_table)
+#Small comment
 
 while i < time_of_savings + 1:
     
